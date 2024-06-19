@@ -376,7 +376,7 @@
             "lengthChange": false,
             "autoWidth": false,
             "paging": false,
-            "searching": false,
+            "searching": true,
             "info": false,
             "buttons": ["print"],
         }).buttons().container().appendTo('#hasil_perankingan_wrapper .col-md-6:eq(0)');
