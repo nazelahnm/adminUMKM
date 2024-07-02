@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Data Kelurahan</h1>
+                <h1>Data Kelurahan</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                        <li class="breadcrumb-item active">Data Kelurahan</li>
+                        <li class="breadcrumb-item active">Data Kelurahan Tahun</li>
                     </ol>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <a class="btn btn-primary" href="{{ route('kelurahan.create') }}">Tambah Kelurahan</a>
+                            <a class="btn btn-primary" href="{{ route('kelurahan.create', ['tahun_id' => $tahun_id]) }}">Tambah Kelurahan</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -34,7 +34,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Kelurahan</th>
+                                        <th>Nama Kelurahan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -85,11 +85,15 @@
                                                                 <div class="form-group">
                                                                     <input type="file" name="file" required>
                                                                 </div>
+                                                                <div>
+                                                                    <a href="{{ asset('storage/template.xlsx') }}">Download Template Excel Import Data UMKM</a>
+                                                                </div>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                 <button type="submit" class="btn btn-primary">Import</button>
                                                             </div>
+                                                            
                                                         </form>
                                                     </div>
                                                 </div>

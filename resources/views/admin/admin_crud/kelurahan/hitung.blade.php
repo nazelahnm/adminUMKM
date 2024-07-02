@@ -23,7 +23,7 @@
                     <!-- Langkah 1 -->
                     <div class="card">
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="langkah1" class="table table-bordered table-hover">
                                 <h6>Langkah 1 (Pembentukan Matriks Keputusan Awal (X))</h6>
                                 <thead>
                                     <tr>
@@ -83,7 +83,7 @@
                     <!-- Langkah 2 -->
                     <div class="card">
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="langkah2" class="table table-bordered table-hover">
                                 <h6>Langkah 2 (Normalisasi Matriks Keputusan Awal(X))</h6>
                                 <thead>
                                     <tr>
@@ -154,7 +154,7 @@
                     <!-- Langkah 3 -->
                     <div class="card">
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="langkah3" class="table table-bordered table-hover">
                                 <h6>Langkah 3 (Perhitungan Elemen Matriks Tertimbang (V))</h6>
                                 <thead>
                                     <tr>
@@ -212,7 +212,7 @@
                     <!-- Langkah 4 -->
                     <div class="card">
                         <div class="card-body">
-                            <table id="hasil_mabac" class="table table-bordered text-center">
+                            <table id="langkah4" class="table table-bordered table-hover">
                                 <h6>Langkah 4 (Penentuan Matriks Area Perkiraan Perbatasan (G))</h6>
                                 <thead>
                                     <tr>
@@ -237,7 +237,7 @@
                     <!-- Langkah 5 -->
                     <div class="card">
                         <div class="card-body">
-                            <table id="hasil_mabac" class="table table-bordered text-center">
+                            <table id="langkah5" class="table table-bordered table-hover">
                                 <h6>Langkah 5 (Jarak Alternatif dari Perkiraan Perbatasan)</h6>
                                 <thead>
                                     <tr>
@@ -294,7 +294,7 @@
                     <!-- Langkah 6 -->
                     <div class="card">
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="langkah6" class="table table-bordered table-hover">
                                 <h6>Langkah 6 (Perankingan Alternatif (S))</h6>
                                 <thead>
                                     <tr>
@@ -349,4 +349,37 @@
 </div>
 </section>
 </div>
+@endsection
+
+@section('script')
+<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('plugins/jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+
+<script>
+    $(function() {
+        // Inisialisasi DataTable untuk setiap elemen dengan id langkah1 hingga langkah6
+        for (let i = 1; i <= 6; i++) {
+            let id = "#langkah" + i;
+            $(id).DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "paging": false,
+                "searching": true,
+                "info": false,
+            }).buttons().container().appendTo(id + '_wrapper .col-md-6:eq(0)');
+            $(id + '_wrapper .col-md-6:eq(0)').removeClass('col-md-6').addClass('col-md-12 d-flex justify-content-end');
+        }
+    });
+</script>
 @endsection

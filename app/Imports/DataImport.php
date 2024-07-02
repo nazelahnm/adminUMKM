@@ -4,25 +4,21 @@ namespace App\Imports;
 
 use App\Models\Data;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class DataImport implements ToModel
+class DataImport implements ToModel, WithHeadingRow
 {
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
     public function model(array $row)
     {
         return new Data([
-            'kelurahan_id' => $row[1],
-            'nama_umkm' => $row[2],
-            'laba_bersih' => $row[3],
-            'omset' => $row[4],
-            'jumlah_karyawan' => $row[5],
-            'modal' => $row[6],
-            'usia' => $row[7],
-            'lokasi' => $row[8],
+            'kelurahan_id' => $row['kelurahan_id'], // Pastikan ini integer
+            'nama_umkm' => $row['nama_umkm'],
+            'laba_bersih' => $row['laba_bersih'],
+            'omset' => $row['omset'],
+            'jumlah_karyawan' => $row['jumlah_karyawan'],
+            'modal' => $row['modal'],
+            'usia' => $row['usia'],
+            'lokasi' => $row['lokasi'],
         ]);
     }
 }

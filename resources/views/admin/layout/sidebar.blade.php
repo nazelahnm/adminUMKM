@@ -57,7 +57,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a href="{{route('kelurahan.index')}}" class="nav-link">
+                    <a href="{{route('tahuns.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-map"></i>
                         <p>
                             Kelurahan

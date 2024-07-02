@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{route('kelurahan.index')}}">Data Kelurahan</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('kelurahan.index', ['tahun_id' => $kelurahan->tahun_id])}}">Data Kelurahan</a></li>
                         <li class="breadcrumb-item active">Edit Data Kelurahan</li>
                     </ol>
                 </div>
@@ -46,7 +46,27 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Nama Kelurahan</label>
-                                    <input type="text" class="form-control" id="nama_kelurahan" name="nama_kelurahan" placeholder="Enter Nama Kelurahan" value="{{$kelurahan->nama_kelurahan}}">
+                                    <select class="form-control" id="nama_kelurahan" name="nama_kelurahan">
+                                        <option value="">Pilih Kelurahan</option>
+                                        <option value="Balongsari" {{ $kelurahan->nama_kelurahan == 'Balongsari' ? 'selected' : '' }}>Balongsari</option>
+                                        <option value="Blooto" {{ $kelurahan->nama_kelurahan == 'Blooto' ? 'selected' : '' }}>Blooto</option>
+                                        <option value="Gedongan" {{ $kelurahan->nama_kelurahan == 'Gedongan' ? 'selected' : '' }}>Gedongan</option>
+                                        <option value="Gunung Gedangan" {{ $kelurahan->nama_kelurahan == 'Gunung Gedangan' ? 'selected' : '' }}>Gunung Gedangan</option>
+                                        <option value="Jagalan" {{ $kelurahan->nama_kelurahan == 'Jagalan' ? 'selected' : '' }}>Jagalan</option>
+                                        <option value="Kauman" {{ $kelurahan->nama_kelurahan == 'Kauman' ? 'selected' : '' }}>Kauman</option>
+                                        <option value="Kedundung" {{ $kelurahan->nama_kelurahan == 'Kedundung' ? 'selected' : '' }}>Kedundung</option>
+                                        <option value="Kranggan" {{ $kelurahan->nama_kelurahan == 'Kranggan' ? 'selected' : '' }}>Kranggan</option>
+                                        <option value="Magersari" {{ $kelurahan->nama_kelurahan == 'Magersari' ? 'selected' : '' }}>Magersari</option>
+                                        <option value="Meri" {{ $kelurahan->nama_kelurahan == 'Meri' ? 'selected' : '' }}>Meri</option>
+                                        <option value="Miji" {{ $kelurahan->nama_kelurahan == 'Miji' ? 'selected' : '' }}>Miji</option>
+                                        <option value="Mentikan" {{ $kelurahan->nama_kelurahan == 'Mentikan' ? 'selected' : '' }}>Mentikan</option>
+                                        <option value="Prajuritkulon" {{ $kelurahan->nama_kelurahan == 'Prajuritkulon' ? 'selected' : '' }}>Prajuritkulon</option>
+                                        <option value="Pulorejo" {{ $kelurahan->nama_kelurahan == 'Pulorejo' ? 'selected' : '' }}>Pulorejo</option>
+                                        <option value="Purwotengah" {{ $kelurahan->nama_kelurahan == 'Purwotengah' ? 'selected' : '' }}>Purwotengah</option>
+                                        <option value="Sentanan" {{ $kelurahan->nama_kelurahan == 'Sentanan' ? 'selected' : '' }}>Sentanan</option>
+                                        <option value="Surodinawan" {{ $kelurahan->nama_kelurahan == 'Surodinawan' ? 'selected' : '' }}>Surodinawan</option>
+                                        <option value="Wates" {{ $kelurahan->nama_kelurahan == 'Wates' ? 'selected' : '' }}>Wates</option>
+                                    </select>
                                 </div>
                                 <div class="card-footer text-right">
                                     <button type="submit" class="btn btn-primary">Submit</button>

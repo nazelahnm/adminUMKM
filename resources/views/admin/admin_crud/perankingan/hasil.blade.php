@@ -303,8 +303,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Alternatif</th>
-                                        <th>Si</th>
+                                        <th>Nama UMKM</th>
+                                        <th>Total Perhitungan</th>
                                     </tr>
                                 </thead>
                                 <tbody>

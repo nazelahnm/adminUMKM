@@ -38,7 +38,7 @@
                                         <th>Bobot</th>
                                         <th>Jenis</th>
                                         <th>Keterangan</th>
-                                        <th style="width: 150px;">Aksi</th>
+                                        <!-- <th style="width: 150px;">Aksi</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,13 +49,13 @@
                                         <td>{{$ktr -> bobot}}</td>
                                         <td>{{$ktr -> jenis}}</td>
                                         <td>{{$ktr -> keterangan}}</td>
-                                        <td class="text-center">
+                                        <!-- <td class="text-center">
                                             <form action="{{route('kriteria.edit',$ktr->id)}}" method="POST" class="d-inline-block">
                                                 @csrf
                                                 @method('PUT')
                                                 <a class="btn btn-warning" href="{{route('kriteria.edit',$ktr->id)}}"><i class="fas fa-edit"></i></a>
                                             </form>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     @endforeach
                                 </tbody>

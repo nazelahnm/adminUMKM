@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelurahan extends Model
 {
-    use HasFactory;
+    public function tahun()
+    {
+        return $this->belongsTo(Tahun::class, 'tahun_id', 'id');
+    }
 }
